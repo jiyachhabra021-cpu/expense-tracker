@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Expense Tracker</h1>
+    <div class="app">
 
-    <input type="number" id="amount" placeholder="Enter amount">
-    <input type="text" id="category" placeholder="Enter category">
+        <h1>💰 Expense Tracker</h1>
 
-    <button onclick="addExpense()">Add Expense</button>
+        <div class="card input-card">
+            <input type="number" id="amount" placeholder="Amount">
+            <input type="text" id="category" placeholder="Category">
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
 
-    <br><br>
+        <div class="card summary">
+            <h2>Total Spent</h2>
+            <h1>₹<span id="total">0</span></h1>
+        </div>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Amount</th>
-                <th>Category</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody id="expenseTable"></tbody>
-    </table>
+        <div class="card table-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expenseTable"></tbody>
+            </table>
+        </div>
 
-    <h2>Total Expenses: ₹<span id="total">0</span></h2>
+        <div class="card chart-card">
+            <h2>Spending Breakdown</h2>
+            <canvas id="myChart"></canvas>
+        </div>
 
-    <h2>Spending Breakdown</h2>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
