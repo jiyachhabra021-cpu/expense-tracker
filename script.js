@@ -14,10 +14,7 @@ function addExpense() {
     let amount = Number(document.getElementById("amount").value);
     let category = document.getElementById("category").value;
 
-    if (!amount || !category) {
-        alert("Please enter valid data");
-        return;
-    }
+    if (!amount || !category) return;
 
     expenses.push({ amount, category });
 
